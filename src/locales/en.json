@@ -1,0 +1,329 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "open": "Open",
+    "close": "Close",
+    "cancel": "Cancel",
+    "back": "Back",
+    "backHome": "Back to start",
+    "notFound": "This page doesn't exist.",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Build your first web page",
+    "codeLabel": "Class code",
+    "join": "Join class",
+    "guide": "Instructions for teachers and mentors",
+    "intro": "A free classroom editor: write HTML, CSS and JavaScript with Tailwind and GSAP ready to use, then publish your page and share it.",
+    "studentTitle": "I'm a student",
+    "continue": "Continue in \"{{title}}\"",
+    "step1": "Ask your teacher for the class code (or open the link they shared).",
+    "step2": "Type the class code:",
+    "step3": "Write your name and start coding.",
+    "sameComputer": "Use the same computer and browser every class to keep your work.",
+    "teacherTitle": "I'm a teacher",
+    "openDashboard": "Open my dashboard",
+    "teacherFirstTime": "First time? Open the invite link your bootcamp admin shared. On another computer, open your personal link.",
+    "guideTitle": "Staff guide",
+    "guideText": "Step-by-step instructions for teachers, mentors and the admin. Password required.",
+    "footer": "Orbit · free classroom code editor for bootcamps"
+  },
+  "join": {
+    "notFound": "There's no class with the code {{code}}. Check the link with your teacher.",
+    "closed": "This class is closed. Ask your teacher to open it.",
+    "nameLabel": "Your name",
+    "namePlaceholder": "First name or nickname",
+    "pairsHint": "Working in pairs? Write both names, e.g. \"Ana & Luis\".",
+    "start": "Start coding",
+    "returningHint": "Joined before on another computer? Use the same name and ask your teacher to move your work."
+  },
+  "editor": {
+    "placeholder": {
+      "html": "Write your first <h1> here…",
+      "css": "Style your page here, e.g. h1 { color: tomato; }",
+      "js": "Make your page move here, e.g. gsap.from('h1', { y: -50, opacity: 0 })"
+    }
+  },
+  "preview": {
+    "title": "Preview",
+    "empty": "Your page will appear here. Start writing in index.html!",
+    "stopped": "The preview is stopped. Press ▶ Run to start it again.",
+    "rerun": "Reload",
+    "stop": "Stop",
+    "run": "Run"
+  },
+  "console": {
+    "title": "Console",
+    "clear": "Clear",
+    "empty": "Messages from console.log() and errors show up here.",
+    "line": "Line {{line}} of script.js: "
+  },
+  "save": {
+    "button": "Save",
+    "saved": "✓ Saved",
+    "unsaved": "● Unsaved changes",
+    "saving": "Saving…",
+    "error": "⚠ Couldn't save. Try again.",
+    "quota": "⚠ Free daily limit reached. Try again tomorrow."
+  },
+  "publish": {
+    "button": "Publish",
+    "title": "Publish your page",
+    "working": "Publishing…",
+    "done": "Your page is online! Share this link:",
+    "closed": "Publishing is closed for this class. Ask your teacher.",
+    "empty": "Your page is empty. Write something first!",
+    "error": "Couldn't publish. Try again.",
+    "qr": "QR code of your page",
+    "republishHint": "Changed your page? Press Publish again — the link stays the same."
+  },
+  "ai": {
+    "button": "AI help",
+    "undo": "Undo AI change",
+    "title": "AI help",
+    "pairsHint": "Under 13? Work with your partner — they use {{tool}}.",
+    "step1": "What do you want to change?",
+    "requestPlaceholder": "e.g. Make my title fade in when the page loads",
+    "step2": "Copy the prompt and paste it into {{tool}}",
+    "copyPrompt": "Copy prompt",
+    "open": "Open {{tool}}",
+    "seePrompt": "See the prompt",
+    "step3": "Copy {{tool}}'s whole answer and paste it here",
+    "answerPlaceholder": "Paste the answer here…",
+    "review": "Review changes",
+    "parseError": "No code found in the answer. Make sure you copied the whole answer, including the code blocks.",
+    "step4": "Check the changes (green = new, red = removed)",
+    "noChanges": "The answer doesn't change your code.",
+    "apply": "Apply to my code",
+    "discard": "Discard"
+  },
+  "teacher": {
+    "title": "Teacher dashboard",
+    "newClass": "New class",
+    "classTitle": "Class name",
+    "defaultLang": "Default language",
+    "aiTool": "AI tool",
+    "create": "Create class",
+    "createError": "Couldn't create the class. Try again.",
+    "myClasses": "My classes",
+    "noClasses": "You don't have classes yet.",
+    "open": "open",
+    "closed": "closed",
+    "classNotFound": "Class not found.",
+    "joinHint": "Students join with this code or link:",
+    "joinQr": "QR code to join the class",
+    "openLabel": "Class open (students can join and publish)",
+    "closedLabel": "Class closed (no new students, no publishing)",
+    "students": "Students",
+    "noStudents": "No students yet. Share the link!",
+    "student": "Student",
+    "lastSave": "Last save",
+    "page": "Page",
+    "viewPage": "Open",
+    "viewCode": "View code",
+    "unpublish": "Unpublish",
+    "moveWork": "Move work",
+    "remove": "Remove",
+    "removeConfirm": "Remove {{name}} and their work from the class? This can't be undone.",
+    "unpublishConfirm": "Unpublish {{name}}'s page? The link will stop working.",
+    "codeOf": "{{name}}'s code",
+    "exit": "Exit",
+    "justNow": "just now",
+    "activeNow": "Active now (saved in the last 2 minutes)",
+    "activeCount": "{{count}} active now",
+    "sortBy": "Sort by",
+    "sortActivity": "Last activity",
+    "sortName": "Name",
+    "progress": "Progress",
+    "linesHint": "Lines of code written in each file"
+  },
+  "move": {
+    "title": "Move {{name}}'s work",
+    "explain": "Use this when a student lost access (cleared browser, private window or another computer). Ask them to join again with their name, then move their old work to the new entry.",
+    "target": "Move to",
+    "warning": "The selected student's current code will be replaced, and the old entry \"{{from}}\" will be removed.",
+    "error": "Couldn't move the work. Try again.",
+    "confirm": "Move work"
+  },
+  "errors": {
+    "signIn": "Couldn't sign in. Check your internet connection and try again.",
+    "load": "Couldn't load your work. Reload the page.",
+    "join": "Couldn't join the class. Try again.",
+    "quota": "The free daily limit was reached. Try again tomorrow.",
+    "infiniteLoop": "A loop ran for too long and was stopped. Check that its condition eventually becomes false.",
+    "notDefined": "\"{{name}}\" doesn't exist. Check the spelling (capital letters count!) or create it with let or const.",
+    "nullProperty": "You tried to use something that doesn't exist. Is the id or class in your selector the same as in your HTML?",
+    "notFunction": "\"{{name}}\" is not a function. Check the spelling and the parentheses.",
+    "constAssign": "You tried to change a const. Use let if the value needs to change.",
+    "alreadyDeclared": "\"{{name}}\" was already created. Use a different name or remove the extra let/const.",
+    "syntax": "Something is missing or extra. Check your ( ), { }, [ ] and quotes."
+  },
+  "workspace": {
+    "restored": "Your teacher restored your saved work. Keep going!",
+    "classCode": "Class code — write it down to come back later"
+  },
+  "help": {
+    "button": "Help",
+    "title": "Teacher guide",
+    "progress": {
+      "title": "Follow your students",
+      "steps": [
+        "Open the class. The Students table updates live — no need to reload.",
+        "The green dot means the student saved in the last 2 minutes. \"Last save\" can lag up to a minute behind their screen (autosave).",
+        "Progress shows how many lines of HTML, CSS and JS each student has written. ✨ AI means their last change came from AI help.",
+        "View code shows their files and a live preview that refreshes every time they save — great on a projector.",
+        "Page → Open ↗ appears once the student has published."
+      ]
+    },
+    "reopenStudent": {
+      "title": "A student comes back (same computer)",
+      "steps": [
+        "The student opens the class link again (or types the class code on the home page).",
+        "The editor opens with their saved work. No name needed.",
+        "This works even if the class is closed — closing only blocks new students and publishing."
+      ]
+    },
+    "moveWork": {
+      "title": "A student lost their work (other computer, cleared browser, private window)",
+      "steps": [
+        "The student joins again with the same name. They now appear twice in the table.",
+        "On the OLD entry click Move work, choose the NEW entry, and confirm.",
+        "Their work appears in their editor within a few seconds. Their published link keeps working."
+      ]
+    },
+    "reopenTeacher": {
+      "title": "Your teacher access",
+      "steps": [
+        "On this computer you stay in until you click Exit.",
+        "On another computer: open your personal link (🔗 My link shows it, and you can send it to your WhatsApp or email).",
+        "Lost it? Ask the bootcamp organizer to send it again."
+      ]
+    },
+    "tips": {
+      "title": "Tips",
+      "steps": [
+        "Ask students to use the same computer and a normal (not private) window every class.",
+        "Ask them to press Save before leaving.",
+        "Close the class at the end of the bootcamp to freeze publishing."
+      ]
+    }
+  },
+  "teacherAccess": {
+    "opening": "Opening your dashboard…",
+    "howToEnter": "Open your personal link to enter — look for it in your WhatsApp or email.",
+    "firstTime": "First time? Open the invite link your organizer shared.",
+    "pasteLabel": "Or paste your personal link here",
+    "enter": "Enter",
+    "notALink": "That doesn't look like a personal link. It looks like https://…/t/…",
+    "invalidLink": "This link doesn't work. Ask the organizer to send you your link again.",
+    "joinTitle": "Welcome to Orbit",
+    "name": "Your name",
+    "start": "Start",
+    "wrongInvite": "This invite link is not valid. Ask the organizer for the current one.",
+    "error": "Something went wrong. Check your internet connection and try again.",
+    "keepTitle": "Ready, {{name}}! Keep your link",
+    "continue": "Continue to my dashboard",
+    "alreadyIn": "This computer is signed in as {{name}}.",
+    "goToDashboard": "Go to {{name}}'s dashboard",
+    "someoneElse": "I'm someone else"
+  },
+  "myLink": {
+    "button": "My link",
+    "title": "My personal link",
+    "intro": "This is your personal link. Open it on any computer to enter your dashboard — no password needed. Send it to yourself now:",
+    "whatsapp": "Send to my WhatsApp",
+    "email": "Email it to me",
+    "copy": "Copy link",
+    "showQr": "Show QR (scan it with your phone)",
+    "qr": "QR code of your personal link",
+    "warning": "Don't share it with students: anyone with this link can open your dashboard.",
+    "message": "My Orbit teacher link (keep it private): {{link}}",
+    "emailSubject": "My Orbit teacher link"
+  },
+  "guide": {
+    "title": "Teacher & mentor guide",
+    "lockedIntro": "For the bootcamp team. Ask the admin for the password.",
+    "password": "Password",
+    "wrongPassword": "Wrong password.",
+    "open": "Open guide",
+    "openDashboard": "Open teacher dashboard",
+    "intro": "Everything you need to run a class. Mentors: start with the first part. Admin: the second part is for you.",
+    "mentorsTitle": "For teachers and mentors",
+    "adminTitle": "For the bootcamp admin",
+    "mentors": {
+      "enter": {
+        "title": "1. Enter your dashboard",
+        "steps": [
+          "First time: open the teacher invite link the admin shared in the teachers' group, type your name and press Start.",
+          "Right after, press \"Send to my WhatsApp\" (or email/copy) to keep your personal link. That link is your key: don't share it with students.",
+          "Next times on the same computer: open the site and click \"I'm a teacher\" — you're already in.",
+          "On another computer: open your personal link. In the dashboard, 🔗 My link shows it again."
+        ]
+      },
+      "createClass": {
+        "title": "2. Create a class and let students in",
+        "steps": [
+          "In the dashboard: type the class name, choose the language and the AI tool (Gemini or ChatGPT), press Create class.",
+          "Open the class. Project the class code (e.g. K7QM-4TZP) or the QR, or paste the link in the class chat.",
+          "Students open the link (or type the code on the home page), write their name and start. Under-13s work in pairs: both names, e.g. \"Ana y Luis\"."
+        ]
+      },
+      "duringClass": {
+        "title": "3. During the class",
+        "steps": [
+          "The Students table updates live. Green dot = saved in the last 2 minutes. Progress = lines of HTML / CSS / JS.",
+          "View code shows a student's files and live preview — great on the projector to review work together.",
+          "Everyone has index.html, style.css and script.js. Tailwind (v3) and GSAP are already loaded: no <script> or <link> needed.",
+          "✨ AI help: the student writes what they want, copies the prompt to Gemini/ChatGPT, pastes the answer back, reviews the changes and presses Apply.",
+          "Errors appear in the Console under the preview, explained in simple words."
+        ]
+      },
+      "studentFaq": {
+        "title": "4. Common student questions",
+        "steps": [
+          "\"I closed the tab\": open the class link again on the same computer (or type the class code on the home page). Their work is there.",
+          "\"I'm on another computer / my work is gone\": they join again with the same name; in the dashboard click Move work on the OLD entry and choose the NEW one.",
+          "\"Where is my page link?\": press Publish again (same link), or see Page → Open ↗ in your dashboard.",
+          "\"My page looks broken\": check the Console under the preview; press Reload; make sure tags are closed.",
+          "\"I lost my changes\": remind them to press Save (or Ctrl/Cmd+S); autosave runs every minute."
+        ]
+      },
+      "endOfClass": {
+        "title": "5. End of class",
+        "steps": [
+          "Ask everyone to press Save and Publish.",
+          "Collect the published links from the Page column.",
+          "At the end of the bootcamp, switch the class to Closed: no new students and no more publishing; pages stay online."
+        ]
+      }
+    },
+    "admin": {
+      "beforeBootcamp": {
+        "title": "A. Before the bootcamp",
+        "steps": [
+          "Clean old data from a computer with the project: npm run reset:classes (keeps teachers) or npm run reset:all (teachers sign up again). It asks you to type the project name to confirm.",
+          "Check the registration code in Firestore: config → registration → code. Change it for each bootcamp if you like.",
+          "Share the teacher invite link only in the teachers' group: https://editorweb-29040.web.app/teacher/join/<registration code>.",
+          "Do a 5-minute rehearsal: one teacher, two students in private windows, publish a page, try AI help."
+        ]
+      },
+      "duringBootcamp": {
+        "title": "B. During the bootcamp",
+        "steps": [
+          "A teacher lost their personal link: in Firestore open teacherKeys, find their name; the document id is the key. Send them https://editorweb-29040.web.app/t/<document id>.",
+          "An inappropriate page: the class teacher presses Unpublish in the dashboard.",
+          "\"Free daily limit reached\": the free plan resets every day; work is safe, try again tomorrow."
+        ]
+      },
+      "afterBootcamp": {
+        "title": "C. After the bootcamp",
+        "steps": [
+          "Close all classes so pages stay online but nothing changes.",
+          "Before the next bootcamp, run the reset again (step A)."
+        ]
+      }
+    }
+  }
+}

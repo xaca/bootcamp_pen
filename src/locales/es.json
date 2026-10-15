@@ -1,0 +1,329 @@
+{
+  "common": {
+    "loading": "Cargando…",
+    "copy": "Copiar",
+    "copied": "¡Copiado!",
+    "open": "Abrir",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "back": "Volver",
+    "backHome": "Volver al inicio",
+    "notFound": "Esta página no existe.",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "Construye tu primera página web",
+    "codeLabel": "Código de la clase",
+    "join": "Entrar a la clase",
+    "guide": "Instrucciones para docentes y mentores",
+    "intro": "Un editor gratuito para la clase: escribe HTML, CSS y JavaScript con Tailwind y GSAP listos para usar, y luego publica tu página y compártela.",
+    "studentTitle": "Soy estudiante",
+    "continue": "Continuar en \"{{title}}\"",
+    "step1": "Pide a tu docente el código de la clase (o abre el enlace que compartió).",
+    "step2": "Escribe el código de la clase:",
+    "step3": "Escribe tu nombre y empieza a programar.",
+    "sameComputer": "Usa la misma computadora y el mismo navegador en cada clase para conservar tu trabajo.",
+    "teacherTitle": "Soy docente",
+    "openDashboard": "Abrir mi panel",
+    "teacherFirstTime": "¿Primera vez? Abre el enlace de invitación que compartió la administración del bootcamp. En otra computadora, abre tu enlace personal.",
+    "guideTitle": "Guía del equipo",
+    "guideText": "Instrucciones paso a paso para docentes, mentores y la administración. Requiere contraseña.",
+    "footer": "Orbit · editor de código gratuito para bootcamps"
+  },
+  "join": {
+    "notFound": "No hay ninguna clase con el código {{code}}. Revisa el enlace con tu docente.",
+    "closed": "Esta clase está cerrada. Pide a tu docente que la abra.",
+    "nameLabel": "Tu nombre",
+    "namePlaceholder": "Nombre o apodo",
+    "pairsHint": "¿Trabajan en pareja? Escriban ambos nombres, por ejemplo \"Ana y Luis\".",
+    "start": "Empezar a programar",
+    "returningHint": "¿Ya entraste antes desde otra computadora? Usa el mismo nombre y pide a tu docente que mueva tu trabajo."
+  },
+  "editor": {
+    "placeholder": {
+      "html": "Escribe tu primer <h1> aquí…",
+      "css": "Dale estilo a tu página aquí, por ejemplo h1 { color: tomato; }",
+      "js": "Dale movimiento a tu página aquí, por ejemplo gsap.from('h1', { y: -50, opacity: 0 })"
+    }
+  },
+  "preview": {
+    "title": "Vista previa",
+    "empty": "Tu página aparecerá aquí. ¡Empieza a escribir en index.html!",
+    "stopped": "La vista previa está detenida. Presiona ▶ Ejecutar para iniciarla otra vez.",
+    "rerun": "Recargar",
+    "stop": "Detener",
+    "run": "Ejecutar"
+  },
+  "console": {
+    "title": "Consola",
+    "clear": "Limpiar",
+    "empty": "Aquí aparecen los mensajes de console.log() y los errores.",
+    "line": "Línea {{line}} de script.js: "
+  },
+  "save": {
+    "button": "Guardar",
+    "saved": "✓ Guardado",
+    "unsaved": "● Cambios sin guardar",
+    "saving": "Guardando…",
+    "error": "⚠ No se pudo guardar. Inténtalo otra vez.",
+    "quota": "⚠ Se alcanzó el límite gratuito del día. Inténtalo mañana."
+  },
+  "publish": {
+    "button": "Publicar",
+    "title": "Publica tu página",
+    "working": "Publicando…",
+    "done": "¡Tu página está en línea! Comparte este enlace:",
+    "closed": "La publicación está cerrada en esta clase. Pregúntale a tu docente.",
+    "empty": "Tu página está vacía. ¡Escribe algo primero!",
+    "error": "No se pudo publicar. Inténtalo otra vez.",
+    "qr": "Código QR de tu página",
+    "republishHint": "¿Cambiaste tu página? Presiona Publicar otra vez: el enlace no cambia."
+  },
+  "ai": {
+    "button": "Ayuda IA",
+    "undo": "Deshacer cambio de IA",
+    "title": "Ayuda con IA",
+    "pairsHint": "¿Tienes menos de 13 años? Trabaja con tu pareja: ella o él usa {{tool}}.",
+    "step1": "¿Qué quieres cambiar?",
+    "requestPlaceholder": "Por ejemplo: haz que mi título aparezca suavemente al cargar la página",
+    "step2": "Copia el prompt y pégalo en {{tool}}",
+    "copyPrompt": "Copiar prompt",
+    "open": "Abrir {{tool}}",
+    "seePrompt": "Ver el prompt",
+    "step3": "Copia toda la respuesta de {{tool}} y pégala aquí",
+    "answerPlaceholder": "Pega la respuesta aquí…",
+    "review": "Revisar cambios",
+    "parseError": "No se encontró código en la respuesta. Asegúrate de copiar toda la respuesta, incluidos los bloques de código.",
+    "step4": "Revisa los cambios (verde = nuevo, rojo = eliminado)",
+    "noChanges": "La respuesta no cambia tu código.",
+    "apply": "Aplicar a mi código",
+    "discard": "Descartar"
+  },
+  "teacher": {
+    "title": "Panel docente",
+    "newClass": "Nueva clase",
+    "classTitle": "Nombre de la clase",
+    "defaultLang": "Idioma predeterminado",
+    "aiTool": "Herramienta de IA",
+    "create": "Crear clase",
+    "createError": "No se pudo crear la clase. Inténtalo otra vez.",
+    "myClasses": "Mis clases",
+    "noClasses": "Todavía no tienes clases.",
+    "open": "abierta",
+    "closed": "cerrada",
+    "classNotFound": "No se encontró la clase.",
+    "joinHint": "Los estudiantes entran con este código o enlace:",
+    "joinQr": "Código QR para entrar a la clase",
+    "openLabel": "Clase abierta (pueden entrar y publicar)",
+    "closedLabel": "Clase cerrada (sin nuevos estudiantes ni publicaciones)",
+    "students": "Estudiantes",
+    "noStudents": "Todavía no hay estudiantes. ¡Comparte el enlace!",
+    "student": "Estudiante",
+    "lastSave": "Último guardado",
+    "page": "Página",
+    "viewPage": "Abrir",
+    "viewCode": "Ver código",
+    "unpublish": "Despublicar",
+    "moveWork": "Mover trabajo",
+    "remove": "Quitar",
+    "removeConfirm": "¿Quitar a {{name}} y su trabajo de la clase? No se puede deshacer.",
+    "unpublishConfirm": "¿Despublicar la página de {{name}}? El enlace dejará de funcionar.",
+    "codeOf": "Código de {{name}}",
+    "exit": "Salir",
+    "justNow": "ahora mismo",
+    "activeNow": "Activo ahora (guardó en los últimos 2 minutos)",
+    "activeCount": "{{count}} activos ahora",
+    "sortBy": "Ordenar por",
+    "sortActivity": "Última actividad",
+    "sortName": "Nombre",
+    "progress": "Progreso",
+    "linesHint": "Líneas de código escritas en cada archivo"
+  },
+  "move": {
+    "title": "Mover el trabajo de {{name}}",
+    "explain": "Úsalo cuando un estudiante perdió el acceso (borró el navegador, usó una ventana privada u otra computadora). Pídele que entre de nuevo con su nombre y luego mueve su trabajo anterior a la nueva entrada.",
+    "target": "Mover a",
+    "warning": "El código actual del estudiante seleccionado se reemplazará y la entrada anterior \"{{from}}\" se eliminará.",
+    "error": "No se pudo mover el trabajo. Inténtalo otra vez.",
+    "confirm": "Mover trabajo"
+  },
+  "errors": {
+    "signIn": "No se pudo iniciar sesión. Revisa tu conexión a internet e inténtalo otra vez.",
+    "load": "No se pudo cargar tu trabajo. Recarga la página.",
+    "join": "No se pudo entrar a la clase. Inténtalo otra vez.",
+    "quota": "Se alcanzó el límite gratuito del día. Inténtalo mañana.",
+    "infiniteLoop": "Un bucle tardó demasiado y se detuvo. Revisa que su condición llegue a ser falsa.",
+    "notDefined": "\"{{name}}\" no existe. Revisa cómo está escrito (¡las mayúsculas cuentan!) o créalo con let o const.",
+    "nullProperty": "Intentaste usar algo que no existe. ¿El id o la clase de tu selector es igual al de tu HTML?",
+    "notFunction": "\"{{name}}\" no es una función. Revisa cómo está escrito y los paréntesis.",
+    "constAssign": "Intentaste cambiar una const. Usa let si el valor necesita cambiar.",
+    "alreadyDeclared": "\"{{name}}\" ya fue creado. Usa otro nombre o quita el let/const repetido.",
+    "syntax": "Falta o sobra algo. Revisa tus ( ), { }, [ ] y comillas."
+  },
+  "workspace": {
+    "restored": "Tu docente recuperó tu trabajo guardado. ¡Sigue adelante!",
+    "classCode": "Código de la clase: anótalo para volver después"
+  },
+  "help": {
+    "button": "Ayuda",
+    "title": "Guía docente",
+    "progress": {
+      "title": "Sigue a tus estudiantes",
+      "steps": [
+        "Abre la clase. La tabla de estudiantes se actualiza en vivo, no hace falta recargar.",
+        "El punto verde significa que el estudiante guardó en los últimos 2 minutos. \"Último guardado\" puede ir hasta un minuto por detrás de su pantalla (autoguardado).",
+        "Progreso muestra cuántas líneas de HTML, CSS y JS ha escrito cada estudiante. ✨ AI indica que su último cambio vino de la ayuda con IA.",
+        "Ver código muestra sus archivos y una vista previa en vivo que se actualiza cada vez que guarda; ideal para el proyector.",
+        "Página → Abrir ↗ aparece cuando el estudiante ya publicó."
+      ]
+    },
+    "reopenStudent": {
+      "title": "Un estudiante vuelve (misma computadora)",
+      "steps": [
+        "El estudiante abre otra vez el enlace de la clase (o escribe el código de la clase en la página de inicio).",
+        "El editor se abre con su trabajo guardado. No necesita escribir su nombre.",
+        "Funciona aunque la clase esté cerrada: cerrar solo bloquea a estudiantes nuevos y las publicaciones."
+      ]
+    },
+    "moveWork": {
+      "title": "Un estudiante perdió su trabajo (otra computadora, navegador borrado, ventana privada)",
+      "steps": [
+        "El estudiante entra de nuevo con el mismo nombre. Ahora aparece dos veces en la tabla.",
+        "En la entrada ANTERIOR haz clic en Mover trabajo, elige la entrada NUEVA y confirma.",
+        "Su trabajo aparece en su editor en unos segundos. Su enlace publicado sigue funcionando."
+      ]
+    },
+    "reopenTeacher": {
+      "title": "Tu acceso docente",
+      "steps": [
+        "En esta computadora sigues dentro hasta que hagas clic en Salir.",
+        "En otra computadora: abre tu enlace personal (🔗 Mi enlace lo muestra y puedes enviarlo a tu WhatsApp o correo).",
+        "¿Lo perdiste? Pide a quien organiza el bootcamp que te lo envíe de nuevo."
+      ]
+    },
+    "tips": {
+      "title": "Consejos",
+      "steps": [
+        "Pide a los estudiantes usar la misma computadora y una ventana normal (no privada) en cada clase.",
+        "Pídeles presionar Guardar antes de irse.",
+        "Cierra la clase al final del bootcamp para congelar las publicaciones."
+      ]
+    }
+  },
+  "teacherAccess": {
+    "opening": "Abriendo tu panel…",
+    "howToEnter": "Abre tu enlace personal para entrar: búscalo en tu WhatsApp o tu correo.",
+    "firstTime": "¿Primera vez? Abre el enlace de invitación que compartió quien organiza.",
+    "pasteLabel": "O pega aquí tu enlace personal",
+    "enter": "Entrar",
+    "notALink": "Eso no parece un enlace personal. Se ve así: https://…/t/…",
+    "invalidLink": "Este enlace no funciona. Pide a quien organiza que te lo envíe de nuevo.",
+    "joinTitle": "Bienvenida/o a Orbit",
+    "name": "Tu nombre",
+    "start": "Empezar",
+    "wrongInvite": "Este enlace de invitación no es válido. Pide el enlace actual a quien organiza.",
+    "error": "Algo salió mal. Revisa tu conexión a internet e inténtalo otra vez.",
+    "keepTitle": "¡Listo, {{name}}! Guarda tu enlace",
+    "continue": "Ir a mi panel",
+    "alreadyIn": "Esta computadora tiene la sesión de {{name}}.",
+    "goToDashboard": "Ir al panel de {{name}}",
+    "someoneElse": "Soy otra persona"
+  },
+  "myLink": {
+    "button": "Mi enlace",
+    "title": "Mi enlace personal",
+    "intro": "Este es tu enlace personal. Ábrelo en cualquier computadora para entrar a tu panel, sin contraseña. Envíatelo ahora:",
+    "whatsapp": "Enviar a mi WhatsApp",
+    "email": "Enviármelo por correo",
+    "copy": "Copiar enlace",
+    "showQr": "Mostrar QR (escanéalo con tu celular)",
+    "qr": "Código QR de tu enlace personal",
+    "warning": "No lo compartas con estudiantes: cualquiera con este enlace puede abrir tu panel.",
+    "message": "Mi enlace docente de Orbit (es privado): {{link}}",
+    "emailSubject": "Mi enlace docente de Orbit"
+  },
+  "guide": {
+    "title": "Guía para docentes y mentores",
+    "lockedIntro": "Para el equipo del bootcamp. Pide la contraseña al administrador.",
+    "password": "Contraseña",
+    "wrongPassword": "Contraseña incorrecta.",
+    "open": "Abrir guía",
+    "openDashboard": "Abrir panel docente",
+    "intro": "Todo lo que necesitas para dar una clase. Mentores: empiecen por la primera parte. Administración: la segunda parte es para ti.",
+    "mentorsTitle": "Para docentes y mentores",
+    "adminTitle": "Para la administración del bootcamp",
+    "mentors": {
+      "enter": {
+        "title": "1. Entra a tu panel",
+        "steps": [
+          "Primera vez: abre el enlace de invitación para docentes que compartió la administración en el grupo de docentes, escribe tu nombre y presiona Empezar.",
+          "Justo después, presiona \"Enviar a mi WhatsApp\" (o correo/copiar) para guardar tu enlace personal. Ese enlace es tu llave: no lo compartas con estudiantes.",
+          "Las siguientes veces en la misma computadora: abre el sitio y haz clic en \"Soy docente\"; ya estás dentro.",
+          "En otra computadora: abre tu enlace personal. En el panel, 🔗 Mi enlace lo muestra de nuevo."
+        ]
+      },
+      "createClass": {
+        "title": "2. Crea una clase y deja entrar a los estudiantes",
+        "steps": [
+          "En el panel: escribe el nombre de la clase, elige el idioma y la herramienta de IA (Gemini o ChatGPT) y presiona Crear clase.",
+          "Abre la clase. Proyecta el código de la clase (p. ej. K7QM-4TZP) o el QR, o pega el enlace en el chat de la clase.",
+          "Los estudiantes abren el enlace (o escriben el código en la página de inicio), escriben su nombre y empiezan. Los menores de 13 trabajan en pareja: ambos nombres, p. ej. \"Ana y Luis\"."
+        ]
+      },
+      "duringClass": {
+        "title": "3. Durante la clase",
+        "steps": [
+          "La tabla de estudiantes se actualiza en vivo. Punto verde = guardó en los últimos 2 minutos. Progreso = líneas de HTML / CSS / JS.",
+          "Ver código muestra los archivos del estudiante y la vista previa en vivo; ideal para revisar en el proyector.",
+          "Todos tienen index.html, style.css y script.js. Tailwind (v3) y GSAP ya están cargados: no hace falta <script> ni <link>.",
+          "✨ Ayuda IA: el estudiante escribe lo que quiere, copia el prompt a Gemini/ChatGPT, pega la respuesta, revisa los cambios y presiona Aplicar.",
+          "Los errores aparecen en la Consola debajo de la vista previa, explicados con palabras simples."
+        ]
+      },
+      "studentFaq": {
+        "title": "4. Preguntas frecuentes de estudiantes",
+        "steps": [
+          "\"Cerré la pestaña\": abre de nuevo el enlace de la clase en la misma computadora (o escribe el código en la página de inicio). Su trabajo sigue ahí.",
+          "\"Estoy en otra computadora / se perdió mi trabajo\": entra de nuevo con el mismo nombre; en el panel haz clic en Mover trabajo en la entrada ANTERIOR y elige la NUEVA.",
+          "\"¿Dónde está el enlace de mi página?\": presiona Publicar otra vez (mismo enlace) o mira Página → Abrir ↗ en tu panel.",
+          "\"Mi página se ve rota\": revisa la Consola debajo de la vista previa; presiona Recargar; verifica que las etiquetas estén cerradas.",
+          "\"Perdí mis cambios\": recuérdales presionar Guardar (o Ctrl/Cmd+S); el autoguardado corre cada minuto."
+        ]
+      },
+      "endOfClass": {
+        "title": "5. Al final de la clase",
+        "steps": [
+          "Pide a todos presionar Guardar y Publicar.",
+          "Reúne los enlaces publicados desde la columna Página.",
+          "Al terminar el bootcamp, cambia la clase a Cerrada: sin estudiantes nuevos ni publicaciones; las páginas siguen en línea."
+        ]
+      }
+    },
+    "admin": {
+      "beforeBootcamp": {
+        "title": "A. Antes del bootcamp",
+        "steps": [
+          "Limpia los datos anteriores desde una computadora con el proyecto: npm run reset:classes (conserva a los docentes) o npm run reset:all (los docentes se registran de nuevo). Pide escribir el nombre del proyecto para confirmar.",
+          "Revisa el código de registro en Firestore: config → registration → code. Puedes cambiarlo en cada bootcamp.",
+          "Comparte el enlace de invitación para docentes solo en el grupo de docentes: https://editorweb-29040.web.app/teacher/join/<código de registro>.",
+          "Haz un ensayo de 5 minutos: un docente, dos estudiantes en ventanas privadas, publica una página y prueba la ayuda IA."
+        ]
+      },
+      "duringBootcamp": {
+        "title": "B. Durante el bootcamp",
+        "steps": [
+          "Un docente perdió su enlace personal: en Firestore abre teacherKeys y busca su nombre; el id del documento es la llave. Envíale https://editorweb-29040.web.app/t/<id del documento>.",
+          "Una página inapropiada: el docente de la clase presiona Despublicar en el panel.",
+          "\"Se alcanzó el límite gratuito del día\": el plan gratuito se reinicia cada día; el trabajo está a salvo, inténtalo mañana."
+        ]
+      },
+      "afterBootcamp": {
+        "title": "C. Después del bootcamp",
+        "steps": [
+          "Cierra todas las clases: las páginas siguen en línea pero nada cambia.",
+          "Antes del siguiente bootcamp, vuelve a hacer el reset (paso A)."
+        ]
+      }
+    }
+  }
+}

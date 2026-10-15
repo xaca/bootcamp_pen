@@ -1,0 +1,209 @@
+rules_version = '2';
+
+// Orbit Editor has no server code: these rules are the whole backend.
+// Everyone (teachers and students) uses Anonymous Auth. A teacher is an anonymous uid that
+// opened their personal link (/t/{accessKey}), which creates teachers/{teacherId}/sessions/{uid}.
+//
+// config/registration         registration code, carried by the organizer's invite link
+// teacherKeys/{accessKey}     access key -> teacher space (the key IS the secret; get by exact id only)
+// teacherInvites/{accessKey}  registration code used to create the space (never readable)
+// teachers/{teacherId}        teacher space; sessions/{uid} = browsers that opened the personal link
+// classes/{classId}           classId is the join code (e.g. "K7QM-4TZP")
+// classes/{classId}/students  one doc per anonymous student uid
+// projects/{classId}_{uid}    the student's code
+// published/{slug}            frozen public snapshot of a project
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function hasTeacherSession(teacherId) {
+      return signedIn()
+        && exists(/databases/$(database)/documents/teachers/$(teacherId)/sessions/$(request.auth.uid));
+    }
+
+    function classData(classId) {
+      return get(/databases/$(database)/documents/classes/$(classId)).data;
+    }
+
+    function isTeacherOf(classId) {
+      return hasTeacherSession(classData(classId).teacherId);
+    }
+
+    function changesOnly(keys) {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly(keys);
+    }
+
+    function validCode(d) {
+      return d.html is string && d.html.size() <= 100000
+        && d.css is string && d.css.size() <= 100000
+        && d.js is string && d.js.size() <= 100000;
+    }
+
+    function validName(name) {
+      return name is string && name.size() >= 1 && name.size() <= 40;
+    }
+
+    function validClassSettings(d) {
+      return d.title is string && d.title.size() >= 1 && d.title.size() <= 60
+        && d.isOpen is bool
+        && d.defaultLang in ['en', 'es']
+        && d.aiTool in ['gemini', 'chatgpt'];
+    }
+
+    // ---------- teachers ----------
+
+    match /config/{docId} {
+      allow read, write: if false;
+    }
+
+    // Creating a teacher space is one batch: teacherKeys + teacherInvites + teachers + first session.
+    match /teacherKeys/{accessKey} {
+      allow get: if signedIn();
+      allow list, update, delete: if false;
+      allow create: if signedIn()
+        && accessKey.matches('^[A-Z0-9]{20}$')
+        && request.resource.data.keys().hasOnly(['teacherId', 'name'])
+        && request.resource.data.teacherId is string
+        && validName(request.resource.data.name)
+        && !exists(/databases/$(database)/documents/teachers/$(request.resource.data.teacherId))
+        && existsAfter(/databases/$(database)/documents/teacherInvites/$(accessKey));
+    }
+
+    // Only the organizer's invite link (which carries the registration code) can create a space.
+    match /teacherInvites/{accessKey} {
+      allow read, update, delete: if false;
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['registrationCode'])
+        && request.resource.data.registrationCode == get(/databases/$(database)/documents/config/registration).data.code
+        && existsAfter(/databases/$(database)/documents/teacherKeys/$(accessKey));
+    }
+
+    // Old code + PIN access (replaced by personal links): closed.
+    match /teacherLogins/{teacherCode} {
+      allow read, write: if false;
+    }
+    match /teacherSecrets/{teacherCode} {
+      allow read, write: if false;
+    }
+
+    match /teachers/{teacherId} {
+      allow get: if hasTeacherSession(teacherId);
+      allow list, update, delete: if false;
+      allow create: if signedIn()
+        && request.resource.data.keys().hasOnly(['name', 'createdAt'])
+        && validName(request.resource.data.name)
+        && existsAfter(/databases/$(database)/documents/teachers/$(teacherId)/sessions/$(request.auth.uid));
+
+      // Opening the personal link: accepted only when the access key belongs to this space.
+      match /sessions/{uid} {
+        allow get, delete: if signedIn() && request.auth.uid == uid;
+        allow list: if false;
+        // update = opening the link again from a browser that already has a session
+        allow create, update: if signedIn()
+          && request.auth.uid == uid
+          && request.resource.data.keys().hasOnly(['accessKey', 'createdAt'])
+          && request.resource.data.accessKey is string
+          && getAfter(/databases/$(database)/documents/teacherKeys/$(request.resource.data.accessKey)).data.teacherId == teacherId;
+      }
+    }
+
+    // ---------- classes ----------
+
+    match /classes/{classId} {
+      // Anyone with the join code can read the class (students need its title, language and AI tool).
+      allow get: if signedIn();
+      allow list: if hasTeacherSession(resource.data.teacherId);
+
+      allow create: if hasTeacherSession(request.resource.data.teacherId)
+        && classId.matches('^[A-Z0-9]{4}-[A-Z0-9]{4}$')
+        && validClassSettings(request.resource.data);
+
+      allow update: if hasTeacherSession(resource.data.teacherId)
+        && request.resource.data.teacherId == resource.data.teacherId
+        && validClassSettings(request.resource.data);
+
+      allow delete: if hasTeacherSession(resource.data.teacherId);
+
+      match /students/{uid} {
+        allow get: if signedIn() && (request.auth.uid == uid || isTeacherOf(classId));
+        allow list: if isTeacherOf(classId);
+
+        // Joining: only while the class is open, only for yourself.
+        allow create: if signedIn()
+          && request.auth.uid == uid
+          && classData(classId).isOpen == true
+          && request.resource.data.keys().hasOnly(['displayName', 'lang', 'joinedAt'])
+          && validName(request.resource.data.displayName)
+          && request.resource.data.lang in ['en', 'es'];
+
+        allow update: if signedIn()
+          && request.auth.uid == uid
+          && changesOnly(['displayName', 'lang'])
+          && validName(request.resource.data.displayName)
+          && request.resource.data.lang in ['en', 'es'];
+
+        allow delete: if isTeacherOf(classId);
+      }
+    }
+
+    match /projects/{projectId} {
+      allow get: if signedIn() && (
+        resource == null
+        || resource.data.ownerUid == request.auth.uid
+        || hasTeacherSession(resource.data.teacherId)
+      );
+      allow list: if hasTeacherSession(resource.data.teacherId);
+
+      allow create: if signedIn()
+        && projectId == request.resource.data.classId + '_' + request.auth.uid
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.teacherId == classData(request.resource.data.classId).teacherId
+        && exists(/databases/$(database)/documents/classes/$(request.resource.data.classId)/students/$(request.auth.uid))
+        && request.resource.data.publishedSlug == null
+        && validName(request.resource.data.studentName)
+        && validCode(request.resource.data);
+
+      // Owner saves code; the teacher can also write code (to move work to a new uid)
+      // and clear publishedSlug (unpublish). Nobody can change classId/ownerUid/teacherId.
+      allow update: if signedIn()
+        && validCode(request.resource.data)
+        && changesOnly(['html', 'css', 'js', 'updatedAt', 'lastChangeSource', 'publishedSlug', 'studentName'])
+        && (resource.data.ownerUid == request.auth.uid || hasTeacherSession(resource.data.teacherId));
+
+      allow delete: if hasTeacherSession(resource.data.teacherId);
+    }
+
+    match /published/{slug} {
+      // Published pages are public.
+      allow get: if true;
+      allow list: if false;
+
+      // A new slug can only be created, never taken over (updates require ownership).
+      allow create: if signedIn()
+        && slug.matches('^[a-z0-9-]{3,80}$')
+        && request.resource.data.ownerUid == request.auth.uid
+        && classData(request.resource.data.classId).isOpen == true
+        && request.resource.data.teacherId == classData(request.resource.data.classId).teacherId
+        && exists(/databases/$(database)/documents/projects/$(request.resource.data.classId + '_' + request.auth.uid))
+        && validName(request.resource.data.studentName)
+        && validCode(request.resource.data);
+
+      allow update: if signedIn() && (
+        (resource.data.ownerUid == request.auth.uid
+          && classData(resource.data.classId).isOpen == true
+          && changesOnly(['html', 'css', 'js', 'studentName', 'lang', 'publishedAt'])
+          && validCode(request.resource.data))
+        || (hasTeacherSession(resource.data.teacherId)
+          && changesOnly(['ownerUid']))
+      );
+
+      allow delete: if signedIn() && (
+        resource.data.ownerUid == request.auth.uid
+        || hasTeacherSession(resource.data.teacherId)
+      );
+    }
+  }
+}
